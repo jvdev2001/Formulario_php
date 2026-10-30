@@ -1,5 +1,6 @@
 <?php
-require "formulario.php";
+require_once "formulario.php";
+require_once "function.php";
 ?>
 
 
@@ -13,13 +14,13 @@ require "formulario.php";
 <body>
     <form action="index.php" method="POST">
         <label for="">NOME:</label>
-        <input type="text" name = "nome">
+        <input type="text" name = "nome" value =<?=$nome ?? ''?>>
         <br>
         <label for="">IDADE:</label>
-        <input type="number" name="idade">
+        <input type="number" name="idade" value = <?=$idade ?? '' ?>> 
         <br>
         <label for="">EMAIL:</label>
-        <input type="text"name = "email">
+        <input type="text"name = "email" value = <?=$email ?? '' ?>>
         <br>
         <label for="">Sexo</label>
         <select name="sexo">
@@ -28,10 +29,18 @@ require "formulario.php";
         </select>
         <button type="submit">Enviar</button>
     </form>
+    <?php if(ExibirMensagem($mensagemSucesso)):?>
+        <p style ="color:green">
+            <?=$mensagemSucesso ?>
+        </p>
+    <?php endif?>
 
-    <p><?=$nome?></p>
-    <p><?=$idade?></p>
-    <p><?=$email?></p>
-    <p><?=var_dump($sexo)?></p>
+    <?php if(ExibirMensagem($mensagemErro)):?>
+        <p style ="color:red">
+            <?=$mensagemErro?>
+        </p>
+    <?php endif?>
+
+
 </body>
 </html>
