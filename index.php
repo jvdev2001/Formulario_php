@@ -22,10 +22,11 @@ require_once "function.php";
         <label for="">EMAIL:</label>
         <input type="text"name = "email" value = <?=$email ?? '' ?>>
         <br>
-        <label for="">Sexo</label>
-        <select name="sexo">
-        <option value="masculino">MASCULINO</option>
-        <option value="femenino">FEMENINO</option>
+        <label for="">SEXO:</label>
+        <select name="sexo" value =<?=$sexo ?? ''?>>
+            <?php foreach($opcaoSexo as $sexo ):?>
+                <option value=<?=$sexo?>><?=$sexo?></option>
+                <?php endforeach?>
         </select>
         <button type="submit">Enviar</button>
     </form>

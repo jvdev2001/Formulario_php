@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * Função que retorna uma mensagem de erro ou sucesso para validação de campos do formulario
  * @param string $mensagem 
@@ -18,7 +19,7 @@ function VerificaIdade($idade):string{
     if($idade<=18){
         return "Acesso negado , menor de idade";
     }else{
-        return "Acesso liberado";
+       return "Acesso liberado";
     }
 }
 
