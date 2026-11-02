@@ -26,9 +26,31 @@ require_once "function.php";
         <select name="sexo" value =<?=$sexo ?? ''?>>
             <?php foreach($opcaoSexo as $sexo ):?>
                 <option value=<?=$sexo?>><?=$sexo?></option>
-                <?php endforeach?>
+            <?php endforeach?>
         </select>
+        <br>
+        <label for="">ENDEREÇO:</label>
+        <input type="text" name = "Endereco">
+        <br>
+        <label for="">Nº:</label>
+        <input type="text" name = "Numero">
+        <br>
+        <label for="">ESTADO CIVIL</label>
+        <br>
+        <?php foreach($opcaoEstadoCivil as $estadoCivil):?>
+            <label for=""><?=$estadoCivil?></label>
+            <input type="checkbox"
+            <?php
+            if(in_array($estadoCivil ,   $estadoCivilSelecionado)){
+                echo 'checked';
+            }
+            ?>
+             name="estadoCivil[]" value=<?=$estadoCivil?>>
+        <?php endforeach?>
+        <hr>
         <button type="submit">Enviar</button>
+
+
     </form>
     <?php if(ExibirMensagem($mensagemSucesso)):?>
         <p style ="color:green">

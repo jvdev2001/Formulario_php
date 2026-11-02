@@ -1,5 +1,6 @@
 <?php
 
+require_once "formulario.php";
 
 /**
  * Função que retorna uma mensagem de erro ou sucesso para validação de campos do formulario
@@ -16,7 +17,7 @@ function ExibirMensagem(string $mensagem):bool{
 
 
 function VerificaIdade($idade):string{
-    if($idade<=18){
+    if($idade<18){
         return "Acesso negado , menor de idade";
     }else{
        return "Acesso liberado";
@@ -35,4 +36,5 @@ function VerificaEmailValido( string $email):string{
         return "Email invalido"; 
     }
 }
+
 ?>
