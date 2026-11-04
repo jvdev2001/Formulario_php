@@ -37,4 +37,13 @@ function VerificaEmailValido( string $email):string{
     }
 }
 
+
+function VerificaCpf($cpf):string{
+    if(mb_strlen($cpf)!=11){
+        return "CPF invalido";
+    }else{
+        return "cpf valido";
+    }
+}
+
 ?>

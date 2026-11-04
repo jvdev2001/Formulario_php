@@ -35,7 +35,7 @@ require_once "function.php";
         <label for="">Nº:</label>
         <input type="text" name = "Numero">
         <br>
-        <label for="">ESTADO CIVIL</label>
+        <label for="">ESTADO CIVIL:</label>
         <br>
         <?php foreach($opcaoEstadoCivil as $estadoCivil):?>
             <label for=""><?=$estadoCivil?></label>
@@ -47,7 +47,10 @@ require_once "function.php";
             ?>
              name="estadoCivil[]" value=<?=$estadoCivil?>>
         <?php endforeach?>
-        <hr>
+        <br>
+        <label for="">CPF:</label>
+        <input type="text" name ="cpf">
+        <br>
         <button type="submit">Enviar</button>
 
 
